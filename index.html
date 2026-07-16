@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="images/favicon-32.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 </head>
 <body>
 
@@ -59,6 +59,7 @@
         <a href="#empresa">Empresa</a>
         <a href="#servicos">Serviços</a>
         <a href="#produtos">Produtos</a>
+        <a href="#projetos">Projetos</a>
         <a href="#dicas">Dicas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -88,8 +89,8 @@
     <div class="hero-progress" aria-hidden="true"></div>
 
     <!-- Slide 1 -->
-    <div class="hero-slide active" role="group" aria-label="Slide 1 de 3">
-      <img src="images/hero-1.jpg" alt="Extintores de incêndio profissionais — Dutra 100" loading="eager">
+    <div class="hero-slide active" role="group" aria-label="Slide 1 de 4">
+      <img src="images/projeto-2.jpg" alt="Instalações de segurança corporativa — Dutra 100" loading="eager">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <div class="hero-tag">
@@ -106,8 +107,8 @@
     </div>
 
     <!-- Slide 2 -->
-    <div class="hero-slide" role="group" aria-label="Slide 2 de 3">
-      <img src="images/hero-2.jpg" alt="Equipamentos de Proteção Individual — Dutra 100" loading="lazy">
+    <div class="hero-slide" role="group" aria-label="Slide 2 de 4">
+      <img src="images/projeto-4.jpg" alt="Equipamentos e hidrantes instalados — Dutra 100" loading="lazy">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <div class="hero-tag">
@@ -124,8 +125,8 @@
     </div>
 
     <!-- Slide 3 -->
-    <div class="hero-slide" role="group" aria-label="Slide 3 de 3">
-      <img src="images/hero-3.jpg" alt="Manutenção de extintores — Dutra 100" loading="lazy">
+    <div class="hero-slide" role="group" aria-label="Slide 3 de 4">
+      <img src="images/projeto-1.jpg" alt="Manutenção e caixas de hidrante — Dutra 100" loading="lazy">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <div class="hero-tag">
@@ -137,6 +138,24 @@
         <div class="hero-buttons">
           <a href="#contato" class="btn btn-primary" id="hero-cta-3">Solicitar Serviço</a>
           <a href="#servicos" class="btn btn-outline" id="hero-srv-3">Ver Serviços</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide" role="group" aria-label="Slide 4 de 4">
+      <img src="images/projeto-3.jpg" alt="Certificação Inmetro e laudos técnicos — Dutra 100" loading="lazy">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Conformidade e Certificação
+        </div>
+        <h1>Credibilidade e Qualidade Certificada</h1>
+        <p>Recarga homologada pelo Inmetro e assessoria especializada para laudos técnicos e liberação de AVCB.</p>
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary" id="hero-cta-4">Regularizar Empresa</a>
+          <a href="#servicos" class="btn btn-outline" id="hero-srv-4">Nossas Certificações</a>
         </div>
       </div>
     </div>
@@ -154,6 +173,7 @@
       <button class="hero-indicator active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
       <button class="hero-indicator" role="tab" aria-selected="false" aria-label="Slide 2"></button>
       <button class="hero-indicator" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+      <button class="hero-indicator" role="tab" aria-selected="false" aria-label="Slide 4"></button>
     </div>
   </section>
 
@@ -168,24 +188,38 @@
           <h2 id="about-title">Qualidade e Compromisso <span>em Equipamentos de Segurança</span></h2>
           <p>A Dutra 100 é especializada na venda, recarga e manutenção de extintores de incêndio e equipamentos de proteção individual (EPIs). Com anos de experiência no mercado, nossa equipe de profissionais qualificados garante um atendimento de excelência.</p>
           <p>Todos os nossos serviços são realizados com equipamentos de ponta e seguem rigorosamente as normas técnicas do setor, garantindo total confiabilidade para sua empresa ou residência.</p>
-          <div class="about-cta">
+          <div class="about-cta" style="margin-bottom: 24px;">
             <a href="#contato" class="btn btn-primary" id="about-cta-btn">Solicitar Orçamento</a>
+          </div>
+          <div class="about-stats-mini" style="display: flex; gap: 32px; border-top: 1px solid var(--gray-200); padding-top: 24px; margin-top: 24px; flex-wrap: wrap;">
+            <div>
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--red);">15+</div>
+              <div style="font-size: 0.85rem; color: var(--gray-600); margin-top: 2px;">Anos de Experiência</div>
+            </div>
+            <div>
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--red);">1.200+</div>
+              <div style="font-size: 0.85rem; color: var(--gray-600); margin-top: 2px;">Clientes Atendidos</div>
+            </div>
+            <div>
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--red);">5.000+</div>
+              <div style="font-size: 0.85rem; color: var(--gray-600); margin-top: 2px;">Equipamentos Vendidos</div>
+            </div>
           </div>
         </div>
 
         <!-- Clean, minimalist listing (NO IA cards) -->
         <div class="about-benefits reveal-right">
           <div class="benefit-item">
-            <h4>Qualidade Certificada</h4>
-            <p>Todos os extintores e EPIs atendem perfeitamente aos requisitos das normas técnicas.</p>
+            <h4>Certificação Inmetro</h4>
+            <p>Serviços de recarga e manutenção periódica realizados em total conformidade e homologados pelo Inmetro.</p>
           </div>
           <div class="benefit-item">
-            <h4>Atendimento Ágil</h4>
-            <p>Processos integrados e equipe treinada para entregar seus produtos com máxima rapidez.</p>
+            <h4>AVCB & Regularização</h4>
+            <p>Assessoria especializada na elaboração de projetos e vistorias para emissão de AVCB junto ao Corpo de Bombeiros.</p>
           </div>
           <div class="benefit-item">
-            <h4>Cobertura Ampla</h4>
-            <p>Suporte completo em toda a região do Vale do Paraíba e Litoral Norte.</p>
+            <h4>EPIs com CA Ativo</h4>
+            <p>Equipamentos de Proteção Individual de alta performance, com Certificado de Aprovação (CA) válido e regular.</p>
           </div>
         </div>
       </div>
@@ -208,76 +242,51 @@
 
         <!-- Right Side Services List (Clean, Custom, Non-Card layout) -->
         <div class="services-list stagger">
-          <!-- Item 1 -->
-          <div class="svc-item">
-            <div class="svc-item-num">01</div>
-            <div class="svc-item-content">
-              <h3>Venda de Extintores</h3>
-              <p>Fornecimento de extintores de água, pó químico seco, CO₂ e espuma mecânica adequados para cada classe de risco.</p>
-            </div>
-            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Venda de Extintores">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
+          <div class="services-subsection-title">Serviços em Destaque</div>
 
-          <!-- Item 2 -->
-          <div class="svc-item">
-            <div class="svc-item-num">02</div>
+          <!-- Item 1 (Featured) -->
+          <div class="svc-item svc-featured">
+            <div class="svc-item-num">★</div>
             <div class="svc-item-content">
-              <h3>Recarga de Extintores</h3>
-              <p>Manutenção periódica e recarga completa do agente extintor em total conformidade com as normas regulamentares vigentes.</p>
+              <h3>Recarga e Manutenção de Extintores</h3>
+              <p>Serviço certificado pelo Inmetro com frota própria para retirada e entrega, garantindo a recarga correta e segura dos cilindros.</p>
             </div>
             <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Recarga de Extintores">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </div>
 
-          <!-- Item 3 -->
-          <div class="svc-item">
-            <div class="svc-item-num">03</div>
+          <!-- Item 2 (Featured) -->
+          <div class="svc-item svc-featured">
+            <div class="svc-item-num">★</div>
             <div class="svc-item-content">
-              <h3>Manutenção Preventiva</h3>
-              <p>Vistorias e revisões sistemáticas para certificar que seus equipamentos de segurança estarão operacionais quando necessário.</p>
+              <h3>Projetos de AVCB e Regularização</h3>
+              <p>Assessoria de engenharia completa para obtenção, renovação e vistoria de AVCB e CLCB junto ao Corpo de Bombeiros.</p>
             </div>
-            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Manutenção Preventiva">
+            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Projetos de AVCB">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </div>
 
-          <!-- Item 4 -->
-          <div class="svc-item">
-            <div class="svc-item-num">04</div>
-            <div class="svc-item-content">
-              <h3>Teste Hidrostático</h3>
-              <p>Ensaios técnicos de pressão no cilindro para assegurar a integridade estrutural e evitar falhas operacionais.</p>
-            </div>
-            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Teste Hidrostático">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
+          <div class="services-subsection-title" style="margin-top: 40px;">Outros Serviços</div>
 
-          <!-- Item 5 -->
-          <div class="svc-item">
-            <div class="svc-item-num">05</div>
-            <div class="svc-item-content">
-              <h3>Sinalização de Segurança</h3>
-              <p>Placas fotoluminescentes, demarcações de rotas de fuga e demarcação de piso para atendimento à NBR 13434.</p>
+          <div class="other-services-grid">
+            <div class="other-svc-box">
+              <h4>Venda de Extintores</h4>
+              <p>Fornecimento de equipamentos novos (Água, Pó e CO₂) de alta qualidade.</p>
             </div>
-            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Sinalização de Segurança">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="svc-item">
-            <div class="svc-item-num">06</div>
-            <div class="svc-item-content">
-              <h3>Venda de EPIs</h3>
-              <p>Linha completa de óculos, luvas, capacetes, botas e outros equipamentos essenciais de proteção individual.</p>
+            <div class="other-svc-box">
+              <h4>Teste Hidrostático</h4>
+              <p>Testes regulamentados de pressão para atestar a segurança mecânica dos cilindros.</p>
             </div>
-            <a href="#contato" class="svc-item-arrow" aria-label="Solicitar Venda de EPIs">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="other-svc-box">
+              <h4>Sinalização de Emergência</h4>
+              <p>Implantação de placas fotoluminescentes e rotas de fuga conforme NBR 13434.</p>
+            </div>
+            <div class="other-svc-box">
+              <h4>Venda de EPIs</h4>
+              <p>Equipamentos de proteção individual certificados (capacete, luvas, botas, óculos).</p>
+            </div>
           </div>
         </div>
 
@@ -304,7 +313,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Combate</div>
                 <h3>Extintores de Incêndio</h3>
-                <p>Água, pó químico seco e CO₂ dimensionados especificamente para a carga de incêndio da sua empresa.</p>
+                <p>Equipamentos novos de Água, Pó e CO₂ com homologação e selo ativo do Inmetro.</p>
                 <a href="#contato" class="prod-link" id="prod-link-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -317,7 +326,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">EPIs</div>
                 <h3>Capacetes de Segurança</h3>
-                <p>Capacetes de alta resistência tipo I e II com suspensões confortáveis e ajuste rápido.</p>
+                <p>Modelos tipo I e II de alta durabilidade com Certificado de Aprovação (CA) regular.</p>
                 <a href="#contato" class="prod-link" id="prod-link-2">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -330,7 +339,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">EPIs</div>
                 <h3>Luvas de Proteção</h3>
-                <p>Luvas de raspa, vaqueta, nitrílicas, neoprene e isolantes elétricas de alta performance.</p>
+                <p>Luvas de raspa, vaqueta, nitrílicas e neoprene com CA ativo do Ministério do Trabalho.</p>
                 <a href="#contato" class="prod-link" id="prod-link-3">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -343,7 +352,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Acessórios</div>
                 <h3>Mangueiras de Incêndio</h3>
-                <p>Mangueiras prediais e industriais certificadas, com alta resistência à abrasão e intempéries.</p>
+                <p>Mangueiras prediais e industriais certificadas em total conformidade com a ABNT NBR 11861.</p>
                 <a href="#contato" class="prod-link" id="prod-link-4">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -356,7 +365,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Sinalização</div>
                 <h3>Placas de Sinalização</h3>
-                <p>Placas indicativas fotoluminescentes para rotas de saída e equipamentos de emergência.</p>
+                <p>Placas fotoluminescentes regulamentadas conforme a NBR 13434 e IT-20 do Corpo de Bombeiros.</p>
                 <a href="#contato" class="prod-link" id="prod-link-5">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -369,7 +378,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Prevenção</div>
                 <h3>Alarmes de Incêndio</h3>
-                <p>Centrais de alarme endereçáveis e convencionais, botoeiras e detectores ópticos de fumaça.</p>
+                <p>Centrais de alarme e detectores ópticos certificados nas normas nacionais de segurança.</p>
                 <a href="#contato" class="prod-link" id="prod-link-6">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -385,7 +394,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Combate</div>
                 <h3>Extintores de Incêndio</h3>
-                <p>Água, pó químico seco e CO₂ dimensionados especificamente para a carga de incêndio da sua empresa.</p>
+                <p>Equipamentos novos de Água, Pó e CO₂ com homologação e selo ativo do Inmetro.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -398,7 +407,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">EPIs</div>
                 <h3>Capacetes de Segurança</h3>
-                <p>Capacetes de alta resistência tipo I e II com suspensões confortáveis e ajuste rápido.</p>
+                <p>Modelos tipo I e II de alta durabilidade com Certificado de Aprovação (CA) regular.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -411,7 +420,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">EPIs</div>
                 <h3>Luvas de Proteção</h3>
-                <p>Luvas de raspa, vaqueta, nitrílicas, neoprene e isolantes elétricas de alta performance.</p>
+                <p>Luvas de raspa, vaqueta, nitrílicas e neoprene com CA ativo do Ministério do Trabalho.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -424,7 +433,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Acessórios</div>
                 <h3>Mangueiras de Incêndio</h3>
-                <p>Mangueiras prediais e industriais certificadas, com alta resistência à abrasão e intempéries.</p>
+                <p>Mangueiras prediais e industriais certificadas em total conformidade com a ABNT NBR 11861.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -437,7 +446,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Sinalização</div>
                 <h3>Placas de Sinalização</h3>
-                <p>Placas indicativas fotoluminescentes para rotas de saída e equipamentos de emergência.</p>
+                <p>Placas fotoluminescentes regulamentadas conforme a NBR 13434 e IT-20 do Corpo de Bombeiros.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -450,7 +459,7 @@
               <div class="prod-card-body">
                 <div class="prod-chip">Prevenção</div>
                 <h3>Alarmes de Incêndio</h3>
-                <p>Centrais de alarme endereçáveis e convencionais, botoeiras e detectores ópticos de fumaça.</p>
+                <p>Centrais de alarme e detectores ópticos certificados nas normas nacionais de segurança.</p>
                 <a href="#contato" class="prod-link" tabindex="-1">
                   Solicitar cotação
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -473,45 +482,62 @@
     </div>
   </section>
 
-  <!-- ============================================
-       STATS / NUMBERS
-       ============================================ -->
-  <section class="stats" aria-label="Números da empresa">
-    <div class="container">
-      <div class="stats-grid stagger">
-        <div class="stat-item">
-          <div class="stat-value"><span class="counter" data-target="15">0</span><span>+</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-label">Anos de Experiência</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value"><span class="counter" data-target="1200">0</span><span>+</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-label">Clientes Atendidos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value"><span class="counter" data-target="5000">0</span><span>+</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-label">Equipamentos Vendidos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value"><span class="counter" data-target="100">0</span><span>%</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-label">Compromisso Real</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================
-       CTA STRIP
+       NOSSOS PROJETOS
        ============================================ -->
-  <section class="cta-strip" aria-labelledby="cta-title">
+  <section id="projetos" class="projects section" aria-labelledby="proj-title">
     <div class="container">
-      <h2 id="cta-title" class="reveal">Precisa de um Orçamento?</h2>
-      <p class="reveal">Entre em contato e receba uma proposta detalhada e personalizada para sua empresa. Retorno rápido e sem compromisso.</p>
-      <div class="cta-buttons reveal">
-        <a href="#contato" class="btn btn-white" id="cta-orca-btn">Solicitar Orçamento</a>
+      <div class="section-header reveal">
+        <h2 id="proj-title">Nossos Últimos Projetos</h2>
+        <p>Conheça alguns dos projetos de combate a incêndio desenvolvidos e instalados pela Dutra 100.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="projects-grid reveal">
+        <!-- Projeto 1 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/projeto-1.jpg" alt="Caixa metálica com mangueira para embutir e Hidrante" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Caixa Metálica e Hidrante</h3>
+            <p>Instalação de caixa metálica externa com mangueira de embutir e conexões hidráulicas de hidrante.</p>
+          </div>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/projeto-2.jpg" alt="Projeto de prevenção contra incêndio para empresas" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Projeto de Prevenção</h3>
+            <p>Sistema de prevenção contra incêndio completo para empresas, com sinalização e extintores.</p>
+          </div>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/projeto-3.jpg" alt="Prevenção contra incêndio" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Prevenção contra Incêndio</h3>
+            <p>Instalação de tampas de acesso a hidrante subterrâneo e sistema de encanamento de prevenção.</p>
+          </div>
+        </div>
+
+        <!-- Projeto 4 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/projeto-4.jpg" alt="Caixa Metálica e Hidrante" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Caixa Metálica e Hidrante</h3>
+            <p>Sinalização tátil de parede, extintores de CO2/Água e abrigo metálico para hidrante interno.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -751,6 +777,7 @@
             <li><a href="#empresa">Empresa</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#dicas">Dicas</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
@@ -800,7 +827,7 @@
   </a>
 
   <!-- JavaScript -->
-  <script src="js/main.js?v=2.0"></script>
+  <script src="js/main.js?v=2.1"></script>
 
 </body>
 </html>
