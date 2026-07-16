@@ -604,6 +604,8 @@ ul{ list-style:none; }
 .about{
   background: var(--white);
   position: relative;
+  z-index: 10;
+  box-shadow: 0 -6px 20px rgba(15, 23, 42, 0.06), 0 -2px 6px rgba(15, 23, 42, 0.03);
 }
 
 .about-inner{
