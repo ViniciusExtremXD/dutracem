@@ -275,15 +275,61 @@ ul{ list-style:none; }
 .logo-name span{ color: var(--red); }
 
 .logo-tagline{
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--gray-400);
-  letter-spacing: 2px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-top: 2px;
+  color: var(--gray-400);
+  font-weight: 500;
 }
 
-/* Nav */
+/* Header Actions & Social */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(241, 245, 249, 0.7);
+  border: 1px solid var(--gray-200);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.header-social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gray-600);
+  transition: background 0.25s var(--ease-out),
+              color 0.25s var(--ease-out),
+              transform 0.25s var(--ease-out),
+              box-shadow 0.25s var(--ease-out);
+}
+
+.header-social-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.header-social-link:hover {
+  color: var(--white);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeB 90%);
+  box-shadow: 0 4px 12px rgba(214, 36, 159, 0.35);
+  transform: scale(1.08);
+}
+
+/* Nav Menu */
 .nav-menu{
   display: flex;
   align-items: center;
@@ -398,60 +444,54 @@ ul{ list-style:none; }
   z-index: 2;
 }
 
-/* Dutra 100 brand watermark on each hero slide */
-.hero-brand{
+/* Floating vertical social sidebar on hero */
+.hero-social{
   position: absolute;
-  bottom: 48px;
-  right: 48px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(15,23,42,.55);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 12px;
-  padding: 10px 20px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .8s var(--ease-out) .8s,
-              transform .8s var(--ease-out) .8s;
-}
-
-.hero-slide.active .hero-brand{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-brand img{
-  height: 40px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  object-fit: contain;
-}
-
-.hero-brand-text{
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
+  gap: 14px;
+  animation: socialFadeIn 1s var(--ease-out) 1.2s both;
 }
 
-.hero-brand-name{
-  font-size: 15px;
-  font-weight: 800;
+@keyframes socialFadeIn{
+  from{ opacity:0; transform: translateY(calc(-50% + 16px)); }
+  to{   opacity:1; transform: translateY(-50%); }
+}
+
+.hero-social-link{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(15,23,42,.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255,255,255,.8);
+  transition: background .25s, border-color .25s, color .25s,
+              transform .25s var(--ease-out);
+}
+
+.hero-social-link:hover{
+  background: var(--red);
+  border-color: var(--red);
   color: var(--white);
-  letter-spacing: -.3px;
+  transform: scale(1.1);
 }
 
-.hero-brand-name span{ color: #F87171; }
+.hero-social-link svg{ width:18px; height:18px; }
 
-.hero-brand-sub{
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-  font-weight: 500;
+.hero-social-line{
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.25), transparent);
 }
 
 /* Hero tag — clean rectangular label, no AI pill style */
@@ -769,19 +809,25 @@ ul{ list-style:none; }
   background: var(--white);
 }
 
-.products-track-wrap{ position: relative; }
+.products-carousel{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 3%, rgba(0,0,0,1) 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 3%, rgba(0,0,0,1) 97%, transparent);
+}
 
-.products-track{
+.products-marquee{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.products-track-inner{
   display: flex;
   gap: 28px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding: 16px 0;
+  padding: 40px 28px 40px 0;
 }
-.products-track::-webkit-scrollbar{ display:none; }
 
 /* ─────────────────────────────────────────────
    PRODUCT CARDS — Catalog-entry horizontal style
@@ -805,10 +851,11 @@ ul{ list-style:none; }
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-left: 4px solid var(--red);
+  box-shadow: 0 2px 8px rgba(15,23,42,0.03);
 }
 .prod-card.style-odd:hover{
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.08);
 }
 
 /* Style Even: dark card, inverted palette */
@@ -816,10 +863,11 @@ ul{ list-style:none; }
   background: var(--navy);
   border: 1px solid rgba(255,255,255,.06);
   border-left: 4px solid var(--red-light);
+  box-shadow: 0 4px 12px rgba(15,23,42,0.08);
 }
 .prod-card.style-even:hover{
   transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(15,23,42,.25);
+  box-shadow: 0 12px 32px rgba(15,23,42,0.2);
 }
 
 /* Chip label */
