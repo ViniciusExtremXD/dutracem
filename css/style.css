@@ -250,14 +250,14 @@ ul{ list-style:none; }
 }
 
 .logo img{
-  height: 64px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   transition: height var(--duration) var(--ease-out);
 }
 
 .header.scrolled .logo img{
-  height: 52px;
+  height: 64px;
 }
 
 .logo-text{
@@ -267,7 +267,7 @@ ul{ list-style:none; }
 }
 
 .logo-name{
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 900;
   color: var(--navy);
   letter-spacing: -0.5px;
@@ -396,6 +396,62 @@ ul{ list-style:none; }
   justify-content: center;
   padding: 0 10%;
   z-index: 2;
+}
+
+/* Dutra 100 brand watermark on each hero slide */
+.hero-brand{
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15,23,42,.55);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 10px 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .8s var(--ease-out) .8s,
+              transform .8s var(--ease-out) .8s;
+}
+
+.hero-slide.active .hero-brand{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-brand img{
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+.hero-brand-text{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.hero-brand-name{
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -.3px;
+}
+
+.hero-brand-name span{ color: #F87171; }
+
+.hero-brand-sub{
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  font-weight: 500;
 }
 
 .hero-tag{
@@ -728,105 +784,92 @@ ul{ list-style:none; }
 }
 .products-track::-webkit-scrollbar{ display:none; }
 
-/* Authentic cards: styles are customized based on product for high hand-crafted look */
+/* ─────────────────────────────────────────────
+   PRODUCT CARDS — Catalog-entry horizontal style
+   No icon-box, no generic shadow card look.
+   ───────────────────────────────────────────── */
 .prod-card{
-  min-width: 290px; max-width: 290px;
+  min-width: 300px; max-width: 300px;
   flex-shrink: 0;
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform var(--duration) var(--ease-out),
-              box-shadow var(--duration) var(--ease-out),
-              border-color var(--duration);
+              box-shadow var(--duration) var(--ease-out);
   cursor: default;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Variant 1: Clean outline, white background (ODD cards) */
+/* Style Odd: white card, red left-accent strip */
 .prod-card.style-odd{
-  border: 1.5px solid var(--gray-200);
   background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--red);
 }
 .prod-card.style-odd:hover{
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--red-light);
 }
 
-/* Variant 2: Subtle tinted background, borderless top, bottom red line (EVEN cards) */
+/* Style Even: dark card, inverted palette */
 .prod-card.style-even{
-  border: 1px solid var(--gray-100);
-  background: var(--gray-50);
-  border-bottom: 3px solid var(--navy-800);
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,.06);
+  border-left: 4px solid var(--red-light);
 }
 .prod-card.style-even:hover{
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-bottom-color: var(--red);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(15,23,42,.25);
 }
 
-.prod-card-top{
-  height: 170px;
-  display: flex; align-items:center; justify-content:center;
-  position: relative;
-  overflow: hidden;
-  background: rgba(15,23,42,.02);
-}
-
-.style-even .prod-card-top{
-  background: rgba(185,28,28,.02);
-}
-
+/* Chip label */
 .prod-chip{
-  position: absolute;
-  top: 14px; left: 14px;
+  display: inline-block;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  width: fit-content;
 }
 
 .style-odd .prod-chip{
   color: var(--red);
   background: var(--red-faint);
-  border: 1px solid rgba(185,28,28,.15);
 }
 
 .style-even .prod-chip{
-  color: var(--navy);
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  color: var(--red-light);
+  background: rgba(239,68,68,.1);
 }
 
-.prod-card-top svg{
-  width: 60px; height: 60px;
-  stroke-width: 1.5;
-  transition: transform var(--duration) var(--ease-out);
-}
+/* No icon box — card has text-only body */
+.prod-card-top{ display: none; }
 
-.style-odd .prod-card-top svg{ color: var(--red); }
-.style-even .prod-card-top svg{ color: var(--navy-800); }
 
-.prod-card:hover .prod-card-top svg{
-  transform: scale(1.15) rotate(4deg);
-}
-
-.prod-card-body{ padding: 24px 22px; }
+.prod-card-body{ padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
 
 .prod-card-body h3{
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 750;
-  color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
+.style-odd .prod-card-body h3{ color: var(--navy); }
+.style-even .prod-card-body h3{ color: var(--white); }
+
 .prod-card-body p{
-  font-size: 13.5px;
-  color: var(--gray-500);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  flex: 1;
 }
+
+.style-odd .prod-card-body p{ color: var(--gray-500); }
+.style-even .prod-card-body p{ color: rgba(255,255,255,.55); }
 
 .prod-link{
   display: inline-flex;
@@ -834,9 +877,11 @@ ul{ list-style:none; }
   gap: 6px;
   font-size: 13px;
   font-weight: 700;
-  color: var(--red);
-  transition: gap .2s;
+  transition: gap .25s;
+  margin-top: auto;
 }
+.style-odd .prod-link{ color: var(--red); }
+.style-even .prod-link{ color: var(--red-light); }
 .prod-link:hover{ gap: 10px; }
 .prod-link svg{ width:14px; height:14px; stroke-width: 2.5; }
 
