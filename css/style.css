@@ -454,35 +454,34 @@ ul{ list-style:none; }
   font-weight: 500;
 }
 
+/* Hero tag — clean rectangular label, no AI pill style */
 .hero-tag{
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--white);
-  background: rgba(185,28,28,.2);
-  border: 1px solid rgba(185,28,28,.4);
-  border-radius: 100px;
-  padding: 6px 16px;
-  margin-bottom: 24px;
+  color: rgba(255,255,255,.9);
+  border-left: 3px solid var(--red-light);
+  padding: 4px 0 4px 16px;
+  margin-bottom: 28px;
   width: fit-content;
-  backdrop-filter: blur(4px);
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .8s var(--ease-out) .2s,
-              transform .8s var(--ease-out) .2s;
+  transform: translateX(-20px);
+  transition: opacity .7s var(--ease-out) .2s,
+              transform .7s var(--ease-out) .2s;
 }
 
-.hero-slide.active .hero-tag{ opacity:1; transform:translateY(0); }
+.hero-slide.active .hero-tag{ opacity:1; transform:translateX(0); }
 
 .hero-tag-dot{
-  width:6px; height:6px;
+  width: 5px; height: 5px;
   background: var(--red-light);
   border-radius: 50%;
-  animation: blink 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
 }
 
 @keyframes blink{

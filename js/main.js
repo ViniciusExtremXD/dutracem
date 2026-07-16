@@ -180,16 +180,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ============================================
-     PRODUCTS CAROUSEL
+     PRODUCTS CAROUSEL — Auto-rotating with loop
      ============================================ */
   const track   = $('.products-track');
   const prevBtn = $('.carousel-prev');
   const nextBtn = $('.carousel-next');
 
   if (track) {
-    const SCROLL_AMOUNT = 318; // Includes card width + gap
-    prevBtn?.addEventListener('click', () => track.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' }));
-    nextBtn?.addEventListener('click', () => track.scrollBy({ left:  SCROLL_AMOUNT, behavior: 'smooth' }));
+    const CARD_WIDTH = 328; // card width + gap
+    const AUTO_INTERVAL = 2800;
+    let autoTimer;
+
+    function getMaxScroll() {
+      return track.scrollWidth - track.clientWidth;
+    }
+
+    function scrollNext() {
+      const atEnd = track.scrollLeft >= getMaxScroll() - 8;
+      if (atEnd) {
+        // Loop back to start smoothly
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: CARD_WIDTH, behavior: 'smooth' });
+      }
+    }
+
+    function scrollPrev() {
+      track.scrollBy({ left: -CARD_WIDTH, behavior: 'smooth' });
+    }
+
+    function startAutoScroll() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(scrollNext, AUTO_INTERVAL);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoTimer);
+    }
+
+    prevBtn?.addEventListener('click', () => { scrollPrev(); stopAutoScroll(); startAutoScroll(); });
+    nextBtn?.addEventListener('click', () => { scrollNext(); stopAutoScroll(); startAutoScroll(); });
+
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAutoScroll);
+    track.addEventListener('mouseleave', startAutoScroll);
+
+    // Start auto-scroll
+    startAutoScroll();
   }
 
   /* ============================================
