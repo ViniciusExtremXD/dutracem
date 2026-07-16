@@ -1,0 +1,20 @@
+Takes_Video/
+extract_frames.py
+extract_multiple_frames.py
+galeria_takes.html
+temp_fonts/
+.gemini/
+scratch/
+
+# Unused photos / video frames
+fotos/A001_06231544_C100_foto_2.jpg
+fotos/A001_06231544_C100_foto_3.jpg
+fotos/A001_06231546_C103.jpg
+fotos/A001_06231547_C105_foto_4.jpg
+fotos/A001_06231556_C109_foto_4.jpg
+fotos/A001_06231611_C113_foto_4.jpg
+fotos/A001_06231640_C146_foto_2.jpg
+fotos/capacete_video_*
+fotos/luva_video_*
+fotos/capacete.jpg
+fotos/luvas.jpg
