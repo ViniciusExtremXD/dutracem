@@ -236,144 +236,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ============================================
-     PRODUCTS CAROUSEL — Infinite Marquee with Swipe
+     PRODUCTS — Mouse-following glow on cards
      ============================================ */
-  const carousel  = $('.products-carousel');
-  const marquee   = $('.products-marquee');
-  const trackInner = $('.products-track-inner');
-  const prevBtn   = $('#carousel-prev-btn');
-  const nextBtn   = $('#carousel-next-btn');
-
-  if (carousel && marquee && trackInner) {
-    let currentX = 0;
-    let animPaused = false;
-    const speed     = 0.8;   // px per frame
-    const cardWidth = 328;   // 300px card + 28px gap
-
-    // ─── Auto-scroll loop ──────────────────────────────────────────
-    function step() {
-      if (!animPaused) {
-        currentX -= speed;
-        const tw = trackInner.offsetWidth;
-        if (currentX <= -tw) currentX += tw;
-        marquee.style.transform = `translateX(${currentX}px)`;
-      }
-      requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-
-    // ─── Snap helpers ──────────────────────────────────────────────
-    function snapTo(targetX) {
-      animPaused = true;
-      marquee.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1)';
-      marquee.style.transform  = `translateX(${targetX}px)`;
-      setTimeout(() => {
-        currentX = targetX;
-        const tw = trackInner.offsetWidth;
-        if (currentX <= -tw) {
-          currentX += tw;
-          marquee.style.transition = 'none';
-          marquee.style.transform  = `translateX(${currentX}px)`;
-        }
-        marquee.style.transition = 'none';
-        setTimeout(() => { animPaused = false; }, 2500);
-      }, 510);
-    }
-
-    const snapNearest = () => snapTo(-Math.round(-currentX / cardWidth) * cardWidth);
-    const snapNext    = () => snapTo(-(Math.floor(-currentX / cardWidth) + 1) * cardWidth);
-    function snapPrev() {
-      let idx = Math.ceil(-currentX / cardWidth) - 1;
-      if (idx < 0) {
-        const tw = trackInner.offsetWidth;
-        currentX -= tw;
-        marquee.style.transition = 'none';
-        marquee.style.transform  = `translateX(${currentX}px)`;
-        idx = Math.ceil(-currentX / cardWidth) - 1;
-      }
-      snapTo(-idx * cardWidth);
-    }
-
-    // ─── Button controls ──────────────────────────────────────────
-    nextBtn?.addEventListener('click', () => { animPaused = true; snapNext(); });
-    prevBtn?.addEventListener('click', () => { animPaused = true; snapPrev(); });
-
-    // ─── Desktop hover pause ──────────────────────────────────────
-    carousel.addEventListener('mouseenter', () => { animPaused = true;  });
-    carousel.addEventListener('mouseleave', () => { animPaused = false; });
-
-    // ─── Pointer Events swipe (works on mobile AND desktop drag) ──
-    let pointerStartX   = 0;
-    let pointerStartY   = 0;
-    let pointerStartCX  = 0;
-    let pointerDown     = false;
-    let dirLocked       = false;  // null=undecided, true=horiz, false=vert
-    let swipeDelta      = 0;
-    let isHoriz         = false;
-
-    carousel.addEventListener('pointerdown', (e) => {
-      if (e.pointerType === 'mouse' && e.button !== 0) return; // left-click only
-      marquee.style.transition = 'none';
-      animPaused = true;
-      pointerDown    = true;
-      dirLocked      = false;
-      isHoriz        = false;
-      swipeDelta     = 0;
-      pointerStartX  = e.clientX;
-      pointerStartY  = e.clientY;
-      pointerStartCX = currentX;
-      // Capture keeps events coming even if pointer leaves the element
-      carousel.setPointerCapture(e.pointerId);
+  $$('.prod-card, .project-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--y', `${e.clientY - rect.top}px`);
     });
-
-    carousel.addEventListener('pointermove', (e) => {
-      if (!pointerDown) return;
-      const dx = e.clientX - pointerStartX;
-      const dy = e.clientY - pointerStartY;
-
-      // Direction decision (need at least 6px of movement)
-      if (!dirLocked) {
-        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
-        isHoriz  = Math.abs(dx) >= Math.abs(dy);
-        dirLocked = true;
-      }
-
-      if (!isHoriz) return; // vertical — browser handles page scroll naturally
-
-      swipeDelta = dx;
-      currentX   = pointerStartCX + dx;
-
-      // Seamless loop during drag
-      const tw = trackInner.offsetWidth;
-      if (currentX > 20)       { currentX -= tw; pointerStartCX = currentX - dx; }
-      else if (currentX < -tw - 20) { currentX += tw; pointerStartCX = currentX - dx; }
-
-      marquee.style.transform = `translateX(${currentX}px)`;
-    });
-
-    function onPointerUp() {
-      if (!pointerDown) return;
-      pointerDown = false;
-      if (!isHoriz) { animPaused = false; return; } // was a vertical scroll
-      if (Math.abs(swipeDelta) > 50) {
-        swipeDelta < 0 ? snapNext() : snapPrev();
-      } else {
-        snapNearest();
-      }
-    }
-
-    carousel.addEventListener('pointerup',     onPointerUp);
-    carousel.addEventListener('pointercancel', onPointerUp);
-
-    // ─── Mouse-following glow on cards ────────────────────────────
-    $$('.prod-card, .project-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--y', `${e.clientY - rect.top}px`);
-      });
-    });
-  }
+  });
 
 
 
