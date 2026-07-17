@@ -250,18 +250,18 @@ ul{ list-style:none; }
 }
 
 .logo img{
-  height: 80px;
+  height: 88px;
   width: auto;
   object-fit: contain;
   transition: height var(--duration) var(--ease-out);
 }
 
 .header.scrolled .logo img{
-  height: 64px;
+  height: 68px;
 }
 
 .header.scrolled .logo img {
-  height: 60px !important;
+  height: 68px !important;
 }
 
 .logo-tagline {
