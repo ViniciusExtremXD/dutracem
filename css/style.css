@@ -211,6 +211,12 @@ ul{ list-style:none; }
   gap: 24px;
 }
 
+.top-bar-loc{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* ============================================
    HEADER
    ============================================ */
@@ -1737,8 +1743,17 @@ ul{ list-style:none; }
    RESPONSIVE — MOBILE ≤ 768px
    ============================================ */
 @media (max-width: 768px){
-  .top-bar .container{ flex-direction: column; gap: 6px; }
-  .top-bar-left, .top-bar-right{ justify-content: center; flex-wrap: wrap; gap: 14px; }
+  .top-bar{ padding: 7px 0; font-size: 12px; }
+  .top-bar .container{ flex-direction: column; gap: 4px; text-align: center; }
+  .top-bar-left, .top-bar-right{ justify-content: center; flex-wrap: nowrap; gap: 10px; width: 100%; }
+  .top-bar-loc{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 11.5px;
+    letter-spacing: -0.1px;
+  }
 
   .hero{ height:60vh; min-height:380px; }
 
@@ -1770,6 +1785,7 @@ ul{ list-style:none; }
    RESPONSIVE — SMALL MOBILE ≤ 480px
    ============================================ */
 @media (max-width: 480px){
+  .top-bar-loc{ font-size: 10.5px; letter-spacing: -0.2px; }
   .header .container{ height: 68px; }
   .logo img{ height: 44px !important; }
   .hero-content h1{ font-size:26px; }
