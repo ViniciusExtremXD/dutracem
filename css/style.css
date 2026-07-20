@@ -1354,6 +1354,19 @@ ul{ list-style:none; }
   gap: 18px;
 }
 
+.form-dual-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 540px){
+  .form-dual-buttons{
+    grid-template-columns: 1fr;
+  }
+}
+
 .form-group{
   display: flex;
   flex-direction: column;

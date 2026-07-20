@@ -283,24 +283,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ============================================
-     CONTACT FORM — UX feedback
+     CONTACT ACTIONS — Dynamic WhatsApp & Email Dispatch
      ============================================ */
-  const form = $('.contact-form');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      if (!btn) return;
-      const orig = btn.innerHTML;
-      btn.innerHTML = '✓ Mensagem enviada!';
-      btn.style.background = '#059669';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = orig;
-        btn.style.background = '';
-        btn.disabled = false;
-        form.reset();
-      }, 3500);
+  const sendWaBtn = $('#send-wa-btn');
+  const sendMailBtn = $('#send-mail-btn');
+
+  if (sendWaBtn) {
+    sendWaBtn.addEventListener('click', () => {
+      const name = $('#name')?.value.trim() || '';
+      const phone = $('#phone')?.value.trim() || '';
+      const subject = $('#subject')?.value || 'Orçamento';
+      const msg = $('#message')?.value.trim() || '';
+
+      let text = `Olá! Vim pelo site da Dutra 100.\n\n`;
+      if (name) text += `*Nome:* ${name}\n`;
+      if (phone) text += `*Telefone:* ${phone}\n`;
+      if (subject) text += `*Assunto:* ${subject}\n`;
+      if (msg) text += `*Mensagem:* ${msg}\n`;
+
+      const waUrl = `https://wa.me/5511975481863?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+
+  if (sendMailBtn) {
+    sendMailBtn.addEventListener('click', () => {
+      const name = $('#name')?.value.trim() || 'Cliente';
+      const phone = $('#phone')?.value.trim() || '';
+      const subject = $('#subject')?.value || 'Solicitação de Orçamento - Dutra 100';
+      const msg = $('#message')?.value.trim() || '';
+
+      let body = `Nome: ${name}\nTelefone: ${phone}\nAssunto: ${subject}\n\nMensagem:\n${msg}`;
+      const mailUrl = `mailto:contato@dutra100-extintores.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailUrl;
     });
   }
 
