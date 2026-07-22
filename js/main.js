@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = $('#message')?.value.trim() || '';
 
       let body = `Nome: ${name}\nTelefone: ${phone}\nAssunto: ${subject}\n\nMensagem:\n${msg}`;
-      const mailUrl = `mailto:contato@dutra100-extintores.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailUrl = `mailto:comercial@dutra100.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailUrl;
     });
   }
